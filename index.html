@@ -3,88 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SNT Admin Hub</title>
+    <title>SNT Admin Hub | Unified Control</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        :root {
+            --primary: #00d2ff;
+            --accent: #e94560;
+            --bg: #0f172a;
+        }
+
         body {
             margin: 0;
             font-family: 'Segoe UI', sans-serif;
-            background: #0f172a;
+            background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
             color: white;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            padding: 20px;
         }
 
         .hub-container {
             text-align: center;
-            padding: 40px;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(12px);
-            border-radius: 24px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(15px);
+            border-radius: 25px;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            width: 90%;
-            max-width: 900px;
+            width: 100%;
+            max-width: 1000px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
         }
 
-        h1 { font-size: 2.2rem; margin-bottom: 30px; color: #00d2ff; }
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 5px;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .subtitle { color: #94a3b8; margin-bottom: 35px; font-size: 0.9rem; }
 
         .icon-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
             gap: 20px;
         }
 
         .hub-card {
-            background: rgba(255, 255, 255, 0.03);
-            padding: 25px;
-            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px 15px;
+            border-radius: 20px;
             text-decoration: none;
             color: white;
             border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .hub-card i {
+            font-size: 2.4rem;
+            color: var(--primary);
+            filter: drop-shadow(0 0 8px rgba(0, 210, 255, 0.3));
+        }
+
+        .hub-card span {
+            font-weight: 600;
+            font-size: 1rem;
+            white-space: nowrap;
         }
 
         .hub-card:hover {
-            background: rgba(0, 210, 255, 0.1);
-            transform: translateY(-8px);
-            border-color: #00d2ff;
+            background: rgba(0, 210, 255, 0.15);
+            transform: translateY(-12px);
+            border-color: var(--primary);
+            box-shadow: 0 15px 30px rgba(0, 210, 255, 0.2);
         }
 
-        .hub-card i { font-size: 2.5rem; color: #00d2ff; }
+        .hub-card:hover i { transform: scale(1.15); color: #fff; }
 
-        .hub-card span { font-weight: 500; font-size: 1.1rem; }
+        /* Status Badges */
+        .badge {
+            font-size: 0.7rem;
+            padding: 3px 8px;
+            border-radius: 10px;
+            background: var(--accent);
+            margin-top: 5px;
+        }
     </style>
 </head>
 <body>
 
     <div class="hub-container">
-        <h1>SNT Administration Hub</h1>
-        
+        <h1>SNT Admin Hub</h1>
+        <div class="subtitle">Official Institute Management Portal</div>
+
         <div class="icon-grid">
+            <a href="attendence.html" class="hub-card">
+                <i class="fas fa-calendar-check"></i>
+                <span>Attendance</span>
+            </a>
+
+            <a href="id-card.html" class="hub-card">
+                <i class="fas fa-id-badge"></i>
+                <span>ID Card Gen</span>
+            </a>
+
+            <a href="display.html" class="hub-card">
+                <i class="fas fa-desktop"></i>
+                <span>Display Board</span>
+            </a>
+
+            <a href="calendar.html" class="hub-card">
+                <i class="fas fa-calendar-alt"></i>
+                <span>Schedule</span>
+            </a>
+
+            <a href="basic.html" class="hub-card">
+                <i class="fas fa-cogs"></i>
+                <span>Basic Setup</span>
+            </a>
+
             <a href="admin.html" class="hub-card">
-                <i class="fas fa-user-shield"></i>
+                <i class="fas fa-user-graduate"></i>
                 <span>Student Admin</span>
             </a>
 
-            <a href="https://harshitkaushal9129-bit.github.io/snt-institute/admin_timer.html" class="hub-card">
-                <i class="fas fa-clock"></i>
+            <a href="admin_timer.html" class="hub-card">
+                <i class="fas fa-hourglass-half"></i>
                 <span>Exam Timer</span>
             </a>
 
-            <a href="https://harshitkaushal9129-bit.github.io/snt-institute/admit_card.html" class="hub-card">
-                <i class="fas fa-id-card"></i>
+            <a href="admit_card.html" class="hub-card">
+                <i class="fas fa-print"></i>
                 <span>Admit Cards</span>
             </a>
+        </div>
 
-            <a href="https://harshitkaushal9129-bit.github.io/Dashboard-of-snt/Pdf-edit.html" class="hub-card">
-                <i class="fas fa-file-pdf"></i>
-                <span>PDF Editor</span>
-            </a>
+        <div style="margin-top: 30px; font-size: 0.8rem; color: #475569;">
+            Developer: Harshit Kaushal | Connected to SNT Official Portal
         </div>
     </div>
 
